@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CommitComments>	<CommitComment>회원가입</CommitComment>
+	<CommitComment>session.jsp의 페이지 지시어에서  contentType 속성 삭제</CommitComment>
+	<CommitComment>20200616 11:31</CommitComment>
+</CommitComments>

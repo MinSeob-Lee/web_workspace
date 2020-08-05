@@ -1,0 +1,12 @@
+<%@page import="java.io.BufferedReader"%>
+<%@ page language="java" contentType="application/json; charset=UTF-8"
+    pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%
+	String cat = request.getParameter("cat");
+	String type = request.getParameter("type");
+	String callback = request.getParameter("callback");
+	
+	System.out.println("cat: " + cat);
+	System.out.println("type: " + type); 
+	System.out.println("callback: " + callback);
+%>

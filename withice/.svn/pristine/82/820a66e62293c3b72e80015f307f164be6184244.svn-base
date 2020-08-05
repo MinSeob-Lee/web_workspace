@@ -1,0 +1,11 @@
+mileage.getMileageById = select mileage_no, mileage_content, mileage_registered_date, user_id, get_mileage, mileage_order \
+						 from withice_mileages_info \
+						 where user_id = ?
+						 
+mileage.getMileageCount = select count(*) cnt \
+						  from withice_mileages_info
+						  
+mileage.getMileageByRange = select A.mileage_no, A.mileage_content, A.mileage_registered_date, A.user_id, A.get_mileage, A.mileage_order \
+							from (select mileage_no, mileage_content, mileage_registered_date, user_id, get_mileage, mileage_order, row_number() \
+							over(order by mileage_no asc) rownumber from withice_mileages_info) A \
+							where A.rownumber >= ? and A.rownumber <= ?

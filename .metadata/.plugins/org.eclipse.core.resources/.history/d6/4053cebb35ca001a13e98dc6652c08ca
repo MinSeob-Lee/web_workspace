@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>서버에게 json데이터 보내고, json데이터 받기</h1>
+	
+	<form id="search-form">
+		<div>
+			<label>카테고리</label>
+			<input type="text" name="cat" />	<!-- 책, 티켓, 음반, 선물 중 하나. -->
+		</div>
+		<div>
+			<label>제품타입</label>
+			<input type="text" name="type" />	<!-- 새상품, 베스트, 추천 중 하나 -->
+		</div>
+		<div>
+			<label>제품가격</label>
+			<input type="text" name="price" />
+		</div>
+	</form>
+</body>
+</html>

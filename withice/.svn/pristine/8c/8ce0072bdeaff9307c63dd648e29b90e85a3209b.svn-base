@@ -1,0 +1,11 @@
+<%@page import="com.withice.vo.Product"%>
+<%@page import="com.withice.dao.ProductDao"%>
+<%@page import="com.withice.util.NumberUtil"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	int productNo = NumberUtil.stringToInt(request.getParameter("productno"));
+	
+	ProductDao dao = new ProductDao();
+	
+%>

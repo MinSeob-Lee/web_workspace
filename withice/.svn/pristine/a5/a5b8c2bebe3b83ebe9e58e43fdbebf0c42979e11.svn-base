@@ -1,0 +1,3 @@
+address.registerAddress = insert into withice_address (address_no, address_name, address_postal_code, address_main, \
+						  address_sub, address_telphone, address_phone, address_receiver, user_id, address_home) \
+						  values (withice_address_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, 1)

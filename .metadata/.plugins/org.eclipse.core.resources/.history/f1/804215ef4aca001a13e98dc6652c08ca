@@ -1,0 +1,8 @@
+<%@page import="java.io.BufferedReader"%>
+<%@ page language="java" contentType="application/json; charset=UTF-8"
+    pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+<%
+	BufferedReader in = request.getReader();
+	String requestData = in.readLine();
+	System.out.println("요청 데이터: " + requestData);
+%>

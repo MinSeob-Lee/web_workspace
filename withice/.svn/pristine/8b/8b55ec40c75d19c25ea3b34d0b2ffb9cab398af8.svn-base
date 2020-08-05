@@ -1,0 +1,8 @@
+product.getNewProductByDate=select  product_name, product_no, product_price, product_stock, product_comment \
+     							  , product_thumbnail, product_registered_date, cate_no \
+							from withice_products \
+							where rownum <= 12
+							
+product.getProductByNo=select * \
+					   from withice_products \
+					   where product_no = ?

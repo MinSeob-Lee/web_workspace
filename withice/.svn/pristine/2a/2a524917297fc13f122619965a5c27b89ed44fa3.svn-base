@@ -1,0 +1,10 @@
+category.getMainCategorys=select cate_no, cate_name \
+						from withice_categorys \
+						where main_cate_no is null
+						
+category.getCategoryByNo=select cate_no, cate_name, main_cate_no \
+						from withice_categorys \
+						where main_cate_no = ?
+category.getMainCategory=select cate_no, cate_name \
+						from withice_categorys \
+						where main_cate_no = ?

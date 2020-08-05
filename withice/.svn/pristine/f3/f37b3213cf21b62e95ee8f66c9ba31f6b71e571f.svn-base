@@ -1,0 +1,20 @@
+
+function deleteAllConfirmByCart() {
+	var check = confirm("장바구니를 비우시겠습니까?");
+	if(check == true){
+		alert("장바구니를 비었습니다.");
+		document.getElementById("deletecart").setAttribute("href", "/withice/order/deleteallcart.jsp");
+	} else{
+		document.getElementById("deletecart").setAttribute("href", "/withice/order/basket.jsp");
+	}
+}
+function deleteAllConfirmByWish() {
+	var check1 = confirm("관심상품을 비우시겠습니까?");
+	if(check1 == true){
+		alert("관심상품를 비었습니다.");
+		document.getElementById("deletewish").setAttribute("href", "/withice/order/deleteallwish.jsp");
+	} else{
+		document.getElementById("deletewish").setAttribute("href", "/withice/myshop/wish_list.jsp");
+	}
+}
+

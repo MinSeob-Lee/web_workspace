@@ -1,0 +1,59 @@
+package com.withice.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.withice.util.ConnectionUtil;
+import com.withice.util.QueryUtil;
+import com.withice.vo.Category;
+
+public class CategoryDao {
+	
+	public List<Category> getMainCategory() throws SQLException {
+		List<Category> categories = new ArrayList<Category>();
+		Connection connection = ConnectionUtil.getConnection();
+		PreparedStatement pstmt = connection.prepareStatement(QueryUtil.getSQL("product.getMainCategory"));
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next()) {
+			Category category = new Category();
+			
+			category.setNo(rs.getInt("cate_no"));
+			category.setName(rs.getString("cate_name"));
+			
+			categories.add(category);
+		}
+		rs.close();
+		pstmt.close();
+		connection.close();
+		
+		return categories;
+	}
+	
+	public List<Category> getCategoryByNo(int cateNo) throws SQLException {
+		List<Category> categories = new ArrayList<Category>();
+		Connection connection = ConnectionUtil.getConnection();
+		PreparedStatement pstmt = connection.prepareStatement(QueryUtil.getSQL("product.getCategoryByNo"));
+		pstmt.setInt(1, cateNo);
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next()) {
+			Category category = new Category();
+			
+			category.setNo(rs.getInt("cate_no"));
+			category.setName(rs.getString("cate_name"));
+			category.setMainCateNo(rs.getInt("main_cate_no"));
+			
+			categories.add(category);
+		}
+		rs.close();
+		pstmt.close();
+		connection.close();
+		
+		return categories;
+	}
+}

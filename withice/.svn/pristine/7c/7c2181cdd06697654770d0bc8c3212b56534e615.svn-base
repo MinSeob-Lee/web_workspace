@@ -1,0 +1,32 @@
+package com.withice.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.withice.util.ConnectionUtil;
+import com.withice.util.QueryUtil;
+import com.withice.vo.Address;
+
+public class AddressDao {
+
+	public void registerAddress(Address address) throws SQLException {
+		Connection connection = ConnectionUtil.getConnection();
+		PreparedStatement pstmt = connection.prepareStatement(QueryUtil.getSQL("address.registerAddress"));
+		
+		pstmt.setString(1, address.getName());
+		pstmt.setInt(2, address.getPostalCode());
+		pstmt.setString(3, address.getMain());
+		pstmt.setString(4, address.getSub());
+		pstmt.setString(5, address.getTelphone());
+		pstmt.setString(6, address.getPhone());
+		pstmt.setString(7, address.getReceiver());
+		pstmt.setString(8, address.getUserid());
+		pstmt.setInt(9, address.getHome());
+		
+		pstmt.executeUpdate();
+		
+		pstmt.close();
+		connection.close();
+	}
+}

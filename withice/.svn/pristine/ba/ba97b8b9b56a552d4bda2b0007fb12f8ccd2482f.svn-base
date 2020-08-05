@@ -1,0 +1,35 @@
+package com.withice.vo;
+
+public class Pagenation {
+
+	private int totalRows;
+	private int viewRows;
+	private int totalpage;
+	private int pageNo;
+	private int beginIndex;
+	private int endIndex;
+	
+	public Pagenation(int totalRows, int viewRows, int pageNo) {
+		this.totalRows = totalRows;
+		this.viewRows = viewRows;
+		this.pageNo = pageNo;
+		this.totalpage = (int) Math.ceil((double) this.totalRows/this.viewRows);
+		this.beginIndex = (this.pageNo - 1)*this.viewRows + 1;
+		this.endIndex = viewRows * pageNo;
+		if (this.pageNo == this.totalpage) {
+			endIndex = this.totalRows;
+		}
+	}
+	
+	public int getBeginIndex() {
+		return beginIndex;
+	}
+	
+	public int getEndIndex() {
+		return endIndex;
+	}
+	
+	public int getTotalpage() {
+		return totalpage;
+	}
+}
